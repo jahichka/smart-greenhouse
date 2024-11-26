@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/control_greenhouse_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/greenhouse_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/greenhouse"
+            android:contentDescription="Greenhouse Image" />
+
+        <LinearLayout
+            android:id="@+id/info_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#AA000000"
+            android:padding="12dp"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/greenhouse_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Greenhouse 1"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/temperature_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature: 24°C"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/humidity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity: 60%"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/acidity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Acidity: 6.5"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Switch
+                    android:id="@+id/switch_watering_system"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Watering System"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="16dp" />
+
+                <Switch
+                    android:id="@+id/switch_window_control"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Windows Control"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<osmdroid>
+    <cache>
+        <expiration_time>604800000</expiration_time>
+        <cache_path>osmdroid/tiles</cache_path>
+        <cache_size>50</cache_size>
+    </cache>
+    <userAgent>GreenhouseApp</userAgent>
+</osmdroid>

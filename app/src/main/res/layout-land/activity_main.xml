@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/username_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, User!"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp" />
+
+    <LinearLayout
+        android:id="@+id/weather_details_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/username_text_view"
+        app:layout_constraintTop_toTopOf="@id/username_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Weather Icon"
+            android:src="@drawable/cloudy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Temperature"
+            android:textColor="#808080"
+            android:textSize="12sp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11°C"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precipitation"
+            android:textColor="#808080"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.5 cm"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginLeft="16dp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/map_frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/username_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/recycler_view"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_layout"
+        app:layout_constraintWidth_percent="0.5">
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/osm_map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Map View" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="@id/map_frame_layout"
+        app:layout_constraintBottom_toBottomOf="@id/map_frame_layout"
+        app:layout_constraintStart_toEndOf="@id/map_frame_layout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/bottom_navigation_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/button_dashboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dashboard"
+            android:background="@drawable/button_selector"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button_control"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Control"
+            android:background="@drawable/button_selector"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/button_settings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Settings"
+            android:background="@drawable/button_selector"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

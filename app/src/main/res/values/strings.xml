@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Greenhouse</string>
+    <string name="login">Login</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="register_prompt">Register here</string>
+    <string name="register">Register</string>
+    <string name="register_page_title">Create an Account</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="email_hint">Email Address</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="submit">Submit</string>
+    <string name="greenhouse_1_name">Breske</string>
+    <string name="greenhouse_2_name">Crno Blato</string>
+</resources>
