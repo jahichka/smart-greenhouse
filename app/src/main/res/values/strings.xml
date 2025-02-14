@@ -14,4 +14,5 @@
     <string name="submit">Submit</string>
     <string name="greenhouse_1_name">Breske</string>
     <string name="greenhouse_2_name">Crno Blato</string>
+    <string name="login_prompt">Login here</string>
 </resources>

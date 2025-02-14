@@ -2,40 +2,62 @@ package com.example.greenhouse
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_layout)
 
-        val loginButton: Button = findViewById(R.id.login_button)
-        val usernameEditText: EditText = findViewById(R.id.username)
-        val passwordEditText: EditText = findViewById(R.id.password)
+        auth = FirebaseAuth.getInstance()
+        db = FirebaseFirestore.getInstance()
+
+        val loginButton = findViewById<Button>(R.id.login_button)
+        val emailEditText = findViewById<EditText>(R.id.email)
+        val passwordEditText = findViewById<EditText>(R.id.password)
+        val registerLink = findViewById<TextView>(R.id.register_link)
+
+        registerLink.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
 
         loginButton.setOnClickListener {
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
 
-            if (username.isEmpty()) {
-                Toast.makeText(this, "Username is required", Toast.LENGTH_SHORT).show()
-            } else if (password.isEmpty()) {
-                Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show()
-            } else {
-                val sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
-                val editor = sharedPreferences.edit()
-                editor.putString("username", username)
-                editor.putBoolean("isLoggedIn", true)
-                editor.apply()
-
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(intent)
-                finish()
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Email is required", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
+            if (password.isEmpty()) {
+                Toast.makeText(this, "Password is required", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(
+                            this, "Authentication failed: ${task.exception?.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
         }
     }
 }
