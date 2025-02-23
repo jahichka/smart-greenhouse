@@ -43,7 +43,7 @@
                 android:id="@+id/temperature_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperature: 24°C"
+                android:text="@string/temperature"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -51,7 +51,7 @@
                 android:id="@+id/humidity_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Humidity: 60%"
+                android:text="@string/Humidity"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -59,7 +59,7 @@
                 android:id="@+id/acidity_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Acidity: 6.5"
+                android:text="@string/acidity"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
 
@@ -73,7 +73,7 @@
                     android:id="@+id/switch_watering_system"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Watering System"
+                    android:text="@string/watering_system"
                     android:textColor="@color/white"
                     android:layout_marginEnd="16dp" />
 
@@ -81,7 +81,7 @@
                     android:id="@+id/switch_window_control"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Windows Control"
+                    android:text="@string/window_control"
                     android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Greenhouse</string>
+    <string name="login">Prijavi se</string>
+    <string name="username_hint">Korisničko ime</string>
+    <string name="password_hint">Lozinka</string>
+    <string name="forgot_password">Da li ste zaboravili lozinku?</string>
+    <string name="register_prompt">Registruj se</string>
+    <string name="register">Registruj se</string>
+    <string name="register_page_title">Napravi korisnički račun</string>
+    <string name="full_name_hint">Ime</string>
+    <string name="email_hint">Email adresa</string>
+    <string name="confirm_password_hint">Potvrdi lozinku</string>
+    <string name="submit">Potvrdi</string>
+    <string name="login_prompt">Prijavi se ovdje</string>
+    <string name="temperature">Temperatura</string>
+    <string name="precipitation">Padavine</string>
+    <string name="dashboard">DASHBOARD</string>
+    <string name="control">KONTROLA</string>
+    <string name="Humidity">Vlažnost</string>
+    <string name="acidity">Kiselost tla</string>
+    <string name="watering_system">Navodnjavanje</string>
+    <string name="window_control">Prozračivanje</string>
+    <string name="notes">Bilješke</string>
+    <string name="add_note">DODAJ bilješku</string>
+    <string name="edit_note">Uredi bilješku</string>
+    <string name="delete_note">Izbriši bilješku</string>
+    <string name="photos">Slike</string>
+    <string name="add_photo">DODAJ SLIKU IZ GALERIJE</string>
+    <string name="settings">Postavke</string>
+    <string name="theme">Promjena teme</string>
+    <string name="language">Jezik</string>
+    <string name="change_language">Promijeni jezik</string>
+    <string name="privacy_secrity">Privatnost i sigurnost</string>
+    <string name="log_out">Odjavi se</string>
+    <string name="hint">naziv staklenika</string>
+    <string name="no_location">lokacija nije odabrana</string>
+    <string name="pick_location">Odaberi lokaciji</string>
+    <string name="save">Sačuvaj</string>
+    <string name="enter_note">Unesi svoju bilješku</string>
+    <string name="cancel">Poništi</string>
+</resources>
+

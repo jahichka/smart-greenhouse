@@ -80,7 +80,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Dashboard"
+            android:text="@string/dashboard"
             android:background="@drawable/button_selector"
             android:textColor="@color/white" />
 
@@ -89,7 +89,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Control"
+            android:text="@string/control"
             android:background="@drawable/button_selector"
             android:textColor="@color/white" />
 
@@ -98,7 +98,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Settings"
+            android:text="@string/settings"
             android:background="@drawable/button_selector"
             android:textColor="@color/white" />
     </LinearLayout>

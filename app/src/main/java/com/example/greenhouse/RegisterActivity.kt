@@ -59,6 +59,9 @@ class RegisterActivity : AppCompatActivity() {
                             .addOnFailureListener {
                                 Toast.makeText(this, "Error saving user data", Toast.LENGTH_SHORT).show()
                             }
+                        val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     } else {
                         Toast.makeText(this, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }

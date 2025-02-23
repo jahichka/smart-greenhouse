@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "157718540185",
+    "project_id": "greenhouse-rmas",
+    "storage_bucket": "greenhouse-rmas.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157718540185:android:0a9ac295aec7d30de06d08",
+        "android_client_info": {
+          "package_name": "com.example.greenhouse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjCd5C-ppli88gsf5sMcdtau8gTfMJGuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,10 +7,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
-
-class GreenhouseAdapter(private val items: List<Greenhouse>) :
-    RecyclerView.Adapter<GreenhouseAdapter.GreenhouseViewHolder>() {
+class GreenhouseAdapter(
+    private val items: List<Greenhouse>,
+    private val onItemClick: (Greenhouse) -> Unit
+) : RecyclerView.Adapter<GreenhouseAdapter.GreenhouseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GreenhouseViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -30,14 +32,19 @@ class GreenhouseAdapter(private val items: List<Greenhouse>) :
         private val humidity = itemView.findViewById<TextView>(R.id.greenhouse_humidity)
         private val temperature = itemView.findViewById<TextView>(R.id.greenhouse_temperature)
         private val acidity = itemView.findViewById<TextView>(R.id.greenhouse_soil_acidity)
-        private val background = itemView.findViewById<ImageView>(R.id.greenhouse_background)
 
         fun bind(data: Greenhouse) {
             name.text = data.name
             humidity.text = "${data.humidity}%"
             temperature.text = "${data.temperature}°C"
             acidity.text = "${data.acidity}"
-            background.setImageResource(data.imageResId) // Replace with Glide/Picasso for URLs
+
+            itemView.setOnClickListener {
+                onItemClick(data)
+            }
         }
     }
 }
+
+
+

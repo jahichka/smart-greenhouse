@@ -12,7 +12,7 @@
         android:id="@+id/title_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/settings"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Theme Preference"
+        android:text="@string/theme"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,26 +41,25 @@
         app:layout_constraintStart_toEndOf="@id/text_theme_preference"
         app:layout_constraintTop_toBottomOf="@id/title_settings" />
 
-
     <TextView
         android:id="@+id/text_lang_preferences"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Language Preferences"
+        android:text="@string/language"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_theme_preference" />
 
-    <TextView
-        android:id="@+id/text_account_preferences"
+    <Button
+        android:id="@+id/button_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Account Preferences"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/change_language"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_lang_preferences" />
 
@@ -68,22 +67,21 @@
         android:id="@+id/text_privacy_and_security"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Privacy and Security"
+        android:text="@string/privacy_secrity"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_account_preferences" />
+        app:layout_constraintTop_toBottomOf="@id/button_language" />
 
     <LinearLayout
         android:id="@+id/bottom_navigation_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/green"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
@@ -91,8 +89,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Dashboard"
             android:background="@drawable/button_selector"
+            android:text="@string/dashboard"
             android:textColor="@color/white" />
 
         <Button
@@ -100,8 +98,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Control"
             android:background="@drawable/button_selector"
+            android:text="@string/control"
             android:textColor="@color/white" />
 
         <Button
@@ -109,18 +107,25 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Settings"
             android:background="@drawable/button_selector"
+            android:text="@string/settings"
             android:textColor="@color/white" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="147dp"
-        android:layout_height="57dp"
-        android:text="Log out"
-        android:background="@drawable/button_selector"
+        android:id="@+id/button_logout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_logout_button"
+        android:text="@string/log_out"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="287dp" />
+        app:layout_constraintTop_toBottomOf="@+id/text_privacy_and_security" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

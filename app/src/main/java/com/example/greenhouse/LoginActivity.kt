@@ -22,6 +22,11 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
+        if (auth.currentUser != null) {
+            navigateToMainActivity()
+            return
+        }
+
         val loginButton = findViewById<Button>(R.id.login_button)
         val emailEditText = findViewById<EditText>(R.id.email)
         val passwordEditText = findViewById<EditText>(R.id.password)
@@ -59,5 +64,11 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
         }
+    }
+    private fun navigateToMainActivity() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 }
